@@ -10,8 +10,8 @@ server.get('/testing', async (req: FastifyRequest, reply: FastifyReply) => {
   };
 });
 
-const PORT = 8080;
-server.listen({port: PORT, host: '127.0.0.1'}, (err, addres) => {
+const PORT = 3000;
+server.listen({port: PORT, host: '0.0.0.0'}, (err, addres) => {
   if(err) {
     console.error(err);
     process.exit(1);
