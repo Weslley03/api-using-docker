@@ -1,6 +1,8 @@
+import "reflect-metadata";
 import fastify from "fastify";
 import { router } from "./interface/routes/index-routes";
 
+import './application/usescases/tsringe-user'
 const server = fastify();
 
 server.register(router);

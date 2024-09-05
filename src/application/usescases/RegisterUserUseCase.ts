@@ -1,8 +1,13 @@
-import { IUserDTO } from "../../domain/entities/User";
 import { IUserRepository } from "../../domain/repositories/IUserRepository";
+import { IUserDTO } from "../../domain/entities/User";
+import { inject, injectable } from "tsyringe";
 
+@injectable()
 class RegisterUserUseCase {
-  constructor(private userRepository: IUserRepository) {};
+  constructor(
+    @inject('UserRepository')
+    private userRepository: IUserRepository
+    ) {};
 
   async execute({ name, email }: IUserDTO): Promise<void>{
     await this.userRepository.register({ name, email })

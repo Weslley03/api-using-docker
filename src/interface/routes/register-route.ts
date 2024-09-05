@@ -1,7 +1,7 @@
 import { FastifyInstance } from "fastify";
-import { registerUserFactory } from "../../application/usescases/RegisterUserFatory";
+import { RegisterUserController } from "../../application/usescases/RegisterUserController";
 
-const registerUserController = registerUserFactory();
+const registerUserController = new RegisterUserController();
 
 // eslint-disable-next-line @typescript-eslint/require-await
 async function registerRoute(fastify: FastifyInstance) {
