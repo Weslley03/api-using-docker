@@ -1,7 +1,12 @@
 import { randomUUID } from "crypto";
 
+export interface IUserDTO {
+  email: string;
+  name: string;
+};
+
 class User {
-  id!: string; 
+  id?: string; 
   email!: string; 
   name!: string; 
   createdAt!: Date;

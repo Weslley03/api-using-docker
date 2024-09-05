@@ -17,7 +17,7 @@ export default [
     languageOptions: {
       parser: tsParser, // Properly set the TypeScript parser
       parserOptions: {
-        project: "./tsconfig.json",
+        project: ["./tsconfig.json"],
       },
     },
     plugins: {

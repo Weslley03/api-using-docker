@@ -1,8 +1,28 @@
 services:
+  db:
+    image: mysql:8.0
+    container_name: banco_open_dois
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: weslley03
+      MYSQL_DATABASE: api-schema
+    volumes:
+      - db_data:/var/lib/mysql
+
   app:
     build: .
-    container_name: using_docker_app 
+    container_name: application 
     ports: 
-      - "3000:3000"
-    volumes:
-      - .:/usr/app
+      - "3000:3000"  
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: mysql://root:weslley03@db:3306/api-schema
+    command: >
+      sh -c "npx prisma migrate deploy && npm run dev"  
+  
+volumes:
+  db_data:
+    driver: local
