@@ -1,5 +1,5 @@
-import { IUserDTO } from "../entities/User";
-import { IUserRepository } from "../repositories/IUserRepository";
+import { IUserDTO } from "../../domain/entities/User";
+import { IUserRepository } from "../../domain/repositories/IUserRepository";
 
 class RegisterUserUseCase {
   constructor(private userRepository: IUserRepository) {};

@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { IUserDTO } from "../entities/User";
+import { IUserDTO } from "../../domain/entities/User";
 import { RegisterUserUseCase } from "./RegisterUserUseCase";
 
 class RegisterUserController {

@@ -1,5 +1,5 @@
 import { FastifyInstance } from "fastify";
-import { registerUserFactory } from "../UsesCases/RegisterUserFatory";
+import { registerUserFactory } from "../../application/usescases/RegisterUserFatory";
 
 const registerUserController = registerUserFactory();
 

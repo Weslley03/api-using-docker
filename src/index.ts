@@ -1,5 +1,5 @@
 import fastify from "fastify";
-import { router } from "./routes/index-routes";
+import { router } from "./interface/routes/index-routes";
 
 const server = fastify();
 
