@@ -1,7 +1,7 @@
 services:
   db:
     image: mysql:8.0
-    container_name: banco_open_dois
+    container_name: banco_open
     restart: always
     ports:
       - "3306:3306"
@@ -21,7 +21,7 @@ services:
     environment:
       DATABASE_URL: mysql://root:weslley03@db:3306/api-schema
     command: >
-      sh -c "npx prisma migrate deploy --schema=./src/infrastructure/prisma/schema.prisma && npm run dev"  
+      sh -c "npx prisma migrate deploy --schema=./src/infrastructure/prisma/schema.prisma && npm run start"  
   
 volumes:
   db_data:
