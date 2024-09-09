@@ -6,7 +6,7 @@ import { inject, injectable } from "tsyringe";
 class RegisterUserUseCase {
   constructor(
     @inject('UserRepository')
-    private userRepository: IUserRepository
+    private readonly userRepository: IUserRepository
     ) {};
 
   async execute({ name, email }: IUserDTO): Promise<void>{
